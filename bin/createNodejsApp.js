@@ -18,15 +18,6 @@ async function runCmd(command) {
   }
 }
 
-async function hasYarn() {
-  try {
-    await execSync('yarnpkg --version', { stdio: 'ignore' });
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 // Validate arguments
 if (process.argv.length < 3) {
   console.log('Please specify the target project directory.');
@@ -67,15 +58,7 @@ async function setup() {
     process.chdir(appPath);
 
     // Install dependencies
-    const useYarn = await hasYarn();
-    console.log('Installing dependencies...');
-    if (useYarn) {
-      await runCmd('yarn install');
-    } else {
-      await runCmd('npm install');
-    }
-    console.log('Dependencies installed successfully.');
-    console.log();
+    await runCmd('npm install');
 
     // Copy envornment variables
     fs.copyFileSync(path.join(appPath, '.env.example'), path.join(appPath, '.env'));
@@ -90,16 +73,12 @@ async function setup() {
     fs.unlinkSync(path.join(appPath, 'CONTRIBUTING.md'));
     fs.unlinkSync(path.join(appPath, 'bin', 'createNodejsApp.js'));
     fs.rmdirSync(path.join(appPath, 'bin'));
-    if (!useYarn) {
-      fs.unlinkSync(path.join(appPath, 'yarn.lock'));
-    }
 
     console.log('Installation is now complete!');
     console.log();
 
     console.log('We suggest that you start by typing:');
     console.log(`    cd ${folderName}`);
-    console.log(useYarn ? '    yarn dev' : '    npm run dev');
     console.log();
     console.log('Enjoy your production-ready Node.js app, which already supports a large number of ready-made features!');
     console.log('Check README.md for more info.');
