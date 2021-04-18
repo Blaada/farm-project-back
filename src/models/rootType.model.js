@@ -22,6 +22,10 @@ const rootTypeSchema = mongoose.Schema(
         caliber: {
             type: Boolean,
             required: true
+        },
+        createDate: {
+            type: Date,
+            default:Date.now
         }
     }
 );

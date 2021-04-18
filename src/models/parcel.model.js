@@ -6,6 +6,10 @@ const pacelSchema = mongoose.Schema(
         parcel: {
             type: String,
             required: true
+        },
+        createDate: {
+            type: Date,
+            default:Date.now
         }
     }
 );

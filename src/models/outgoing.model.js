@@ -24,6 +24,10 @@ const outgoingSchema = mongoose.Schema(
             type: Number,
             required: true
         },
+        createDate: {
+            type:Date,
+            default:Date.now
+        }
     }
 );
 outgoingSchema.plugin(toJSON);

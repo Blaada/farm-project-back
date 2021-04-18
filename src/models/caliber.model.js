@@ -6,6 +6,10 @@ const caliberSchema = mongoose.Schema(
         caliber: {
             type: String,
             required: true
+        },
+        createDate: {
+            type: Date,
+            default:Date.now
         }
     }
 );

@@ -6,6 +6,10 @@ const expenseTypeSchema = mongoose.Schema(
         expenseType: {
             type: String,
             required: true
+        },
+        createDate: {
+            type: Date,
+            default:Date.now
         }
     }
 );

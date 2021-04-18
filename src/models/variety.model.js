@@ -10,6 +10,10 @@ const varietySchema = mongoose.Schema(
         rootType: {
             type: String,
             reequired: true
+        },
+        createDate: {
+            type: Date,
+            default:Date.now
         }
     }
 );
