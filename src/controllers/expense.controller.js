@@ -15,6 +15,11 @@ const getExpenses = catchAsync(async (req, res) => {
   const result = await expenseService.queryExpenses(filter, options);
   res.send(result);
 });
+const getExpensesByMonth = catchAsync(async (req, res) => {
+  const month = req.params.month;
+  const result = await expenseService.queryExpensesByMonth(month);
+  res.send(result);
+});
 
 const getExpense = catchAsync(async (req, res) => {
   const expense = await expenseService.getExpenseById(req.params.id);
@@ -37,6 +42,7 @@ const deleteExpense = catchAsync(async (req, res) => {
 module.exports = {
   createExpense,
   getExpenses,
+  getExpensesByMonth,
   getExpense,
   updateExpense,
   deleteExpense,

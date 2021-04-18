@@ -16,6 +16,12 @@ const getCrops = catchAsync(async (req, res) => {
   res.send(result);
 });
 
+const getCropsByPeriod = catchAsync(async (req,res) => {
+  const period = req.params.period;
+  const result = await cropService.queryCropsByPeriod(period);
+  res.send(result);
+});
+
 const getCrop = catchAsync(async (req, res) => {
   const crop = await cropService.getCropById(req.params.id);
   if (!crop) {
@@ -37,6 +43,7 @@ const deleteCrop = catchAsync(async (req, res) => {
 module.exports = {
   createCrop,
   getCrops,
+  getCropsByPeriod,
   getCrop,
   updateCrop,
   deleteCrop,

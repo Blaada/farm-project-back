@@ -10,6 +10,10 @@ router
   .get(auth('admin', 'user'), cropsController.getCrops);
 
 router
+  .route('/period/:period')
+  .get(auth('admin','user'), cropsController.getCropsByPeriod)
+
+router
   .route('/:id')
   .get(auth('admin', 'user'), cropsController.getCrop)
   .patch(auth('admin', 'user'), cropsController.updateCrop)

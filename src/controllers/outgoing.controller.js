@@ -15,7 +15,10 @@ const getOutgoings = catchAsync(async (req, res) => {
   const result = await outgoingService.queryOutgoings(filter, options);
   res.send(result);
 });
-
+const getOutgoingsCountByMonth = catchAsync(async (req, res) => {
+  const count = await outgoingService.outgoingsCountByMonth();
+  res.send(count);
+});
 const getOutgoing = catchAsync(async (req, res) => {
   const outgoing = await outgoingService.getOutgoingById(req.params.id);
   if (!outgoing) {
@@ -37,6 +40,7 @@ const deleteOutgoing = catchAsync(async (req, res) => {
 module.exports = {
   createOutgoing,
   getOutgoings,
+  getOutgoingsCountByMonth,
   getOutgoing,
   updateOutgoing,
   deleteOutgoing,

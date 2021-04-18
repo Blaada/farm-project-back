@@ -9,6 +9,8 @@ router
   .post(auth('admin', 'user'), outgoingController.createOutgoing)
   .get(auth('admin', 'user'), outgoingController.getOutgoings);
 
+
+router.get('/countByMonth',auth('admin','user'),outgoingController.getOutgoingsCountByMonth)
 router
   .route('/:id')
   .get(auth('admin', 'user'), outgoingController.getOutgoing)

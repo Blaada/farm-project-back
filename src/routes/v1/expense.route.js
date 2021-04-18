@@ -10,6 +10,10 @@ router
   .get(auth('admin', 'user'), expenseController.getExpenses);
 
 router
+  .route('/month/:month')
+  .get(auth('admin','user'), expenseController.getExpensesByMonth);
+
+router
   .route('/:id')
   .get(auth('admin', 'user'), expenseController.getExpense)
   .patch(auth('admin', 'user'), expenseController.updateExpense)
