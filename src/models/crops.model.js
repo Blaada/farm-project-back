@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const { toJSON, paginate } = require('./plugins');
 const cropSchema = mongoose.Schema(
     {
+        cropFarmer: {
+            type: String,
+            required: true
+        },
         cropType: {
             type: String,
             required: true,
@@ -25,7 +29,7 @@ const cropSchema = mongoose.Schema(
             type: String
         },
         cropCaliber: {
-            type: Number
+            type: String
         },
         cropExpensePrice: {
             type: Number,

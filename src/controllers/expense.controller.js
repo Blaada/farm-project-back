@@ -10,7 +10,7 @@ const createExpense = catchAsync(async (req, res) => {
 });
 
 const getExpenses = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['']);
+  const filter = pick(req.query, ['expenseLabel']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   const result = await expenseService.queryExpenses(filter, options);
   res.send(result);
@@ -31,7 +31,7 @@ const updateExpense = catchAsync(async (req, res) => {
 
 const deleteExpense = catchAsync(async (req, res) => {
   await expenseService.deleteExpenseById(req.params.id);
-  res.status(httpStatus.NO_CONTENT).send();
+  res.send(req.params.id);
 });
 
 module.exports = {

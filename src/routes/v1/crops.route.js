@@ -6,13 +6,13 @@ const router = express.Router();
 
 router
   .route('/')
-  .post(auth('admin', 'user'), cropsController.createCrop)
-  .get(auth('admin', 'user'), cropsController.getCrops);
+  .post(cropsController.createCrop)
+  .get(cropsController.getCrops);
 
 router
   .route('/:id')
-  .get(auth('admin', 'user'), cropsController.getCrop)
-  .patch(auth('admin', 'user'), cropsController.updateCrop)
-  .delete(auth('admin'), cropsController.deleteCrop);
+  .get(cropsController.getCrop)
+  .patch(cropsController.updateCrop)
+  .delete(cropsController.deleteCrop);
 
 module.exports = router;

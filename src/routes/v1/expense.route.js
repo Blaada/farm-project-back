@@ -6,13 +6,13 @@ const router = express.Router();
 
 router
   .route('/')
-  .post(auth('admin', 'user'), expenseController.createExpense)
-  .get(auth('admin', 'user'), expenseController.getExpenses);
+  .post(expenseController.createExpense)
+  .get(expenseController.getExpenses);
 
 router
   .route('/:id')
-  .get(auth('admin', 'user'), expenseController.getExpense)
-  .patch(auth('admin', 'user'), expenseController.updateExpense)
-  .delete(auth('admin'), expenseController.deleteExpense);
+  .get(expenseController.getExpense)
+  .patch(expenseController.updateExpense)
+  .delete(expenseController.deleteExpense);
 
 module.exports = router;
