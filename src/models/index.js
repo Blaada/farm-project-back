@@ -1,6 +1,6 @@
 module.exports.Token = require('./token.model');
 module.exports.Parcel = require('./parcel.model');
-// module.exports.Caliber = require('./caliber.model');
+module.exports.Caliber = require('./caliber.model');
 module.exports.Crops = require('./crops.model');
 module.exports.Expense = require('./expense.model');
 module.exports.ExpenseType = require('./expense.type.model');

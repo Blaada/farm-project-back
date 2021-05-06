@@ -19,6 +19,6 @@ const varietySchema = mongoose.Schema(
 );
 varietySchema.plugin(toJSON);
 varietySchema.plugin(paginate);
-const Variety = mongoose.model('Caliber', varietySchema);
+const Variety = mongoose.model('Variety', varietySchema);
 
 module.exports = Variety;
