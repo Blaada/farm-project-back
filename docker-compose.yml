@@ -8,7 +8,7 @@ services:
     environment:
       - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
     ports:
-      - '4000:3000'
+      - '3000:3000'
     depends_on:
       - mongodb
     volumes:
@@ -16,7 +16,8 @@ services:
     networks:
       - node-network
   vue-app:
-    image: farm-frontend-img
+    build: ../farm-frontend/
+    image: vue-app
     stdin_open: true
     ports:
       - '8080:8080'

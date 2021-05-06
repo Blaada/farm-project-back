@@ -12,4 +12,4 @@ RUN yarn install --pure-lockfile
 
 COPY --chown=node:node . .
 
-EXPOSE 4000
+EXPOSE 3000
