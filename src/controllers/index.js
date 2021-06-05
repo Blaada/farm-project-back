@@ -9,3 +9,4 @@ module.exports.expenseController = require('./expense.controller');
 module.exports.expenseTypeController = require('./expense.type.controller');
 module.exports.cropsController = require('./crops.controller');
 module.exports.caliberController = require('./caliber.controller');
+module.exports.ouvrierController = require('./ouvrier.controller');

@@ -9,3 +9,4 @@ module.exports.RootStock = require('./rootStock.model');
 module.exports.RootType = require('./rootType.model');
 module.exports.Variety = require('./variety.model');
 module.exports.User = require('./user.model');
+module.exports.Ouvrier = require('./ouvrier.model');

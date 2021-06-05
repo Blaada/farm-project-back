@@ -10,3 +10,4 @@ module.exports.rootStockService = require('./rootStock.service');
 module.exports.rootTypeService = require('./rootType.service');
 module.exports.varietyService = require('./variety.service');
 module.exports.expenseTypeService = require('./expense.type.service');
+module.exports.ouvrierService = require('./ouvrier.service');

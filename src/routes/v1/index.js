@@ -10,6 +10,7 @@ const parcelRoute = require('./parcel.route');
 const rootStockRoute = require('./rootStock.route');
 const rootTypeRoute = require('./rootType.route');
 const varietyRoute = require('./variety.route');
+const ouvrierRoute = require('./ouvrier.route');
 const router = express.Router();
 
 const defaultRoutes = [
@@ -56,6 +57,10 @@ const defaultRoutes = [
   {
     path: '/varieties',
     route: varietyRoute,
+  },
+  {
+    path: '/ouvriers',
+    route: ouvrierRoute,
   }
 ];
 
